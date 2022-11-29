@@ -37,7 +37,7 @@ namespace _1_ShipmentApis.Controllers
         [HttpDelete]
         public IActionResult DeleteFromAddress(int id)
         {
-            var FromAddressFromDb = _con.shipFromAddresses.FirstOrDefault(i => i.ID == id);
+            var FromAddressFromDb = _con.shipFromAddresses.Find(id);
             if (FromAddressFromDb != null)
             {
                 _con.shipFromAddresses.Remove(FromAddressFromDb);

@@ -48,7 +48,7 @@ namespace _1_ShipmentApis.Controllers
         [HttpDelete]
         public IActionResult DeleteClient(int id)
         {
-            var ClientFromDB = _con.clients.FirstOrDefault(d => d.id == id);
+            var ClientFromDB = _con.clients.Find(id);
             if (ClientFromDB == null) return NotFound();
             else
             {

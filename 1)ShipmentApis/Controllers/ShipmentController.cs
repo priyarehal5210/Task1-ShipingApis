@@ -38,7 +38,7 @@ namespace _1_ShipmentApis.Controllers
         [HttpDelete]
         public IActionResult DeleteShipment(int id)
         {
-            var ShipmentFromDb = _con.shipments.FirstOrDefault(s => s.Id == id);
+            var ShipmentFromDb = _con.shipments.Find(id);
             if (ShipmentFromDb == null)
                 return NotFound();
             else

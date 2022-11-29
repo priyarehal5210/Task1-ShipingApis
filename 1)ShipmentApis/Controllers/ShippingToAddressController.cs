@@ -37,7 +37,7 @@ namespace _1_ShipmentApis.Controllers
         [HttpDelete]
         public IActionResult DeleteToAddress(int id)
         {
-            var ToAddressFromDb = _con.shipToAddresses.FirstOrDefault(t => t.ID == id);
+            var ToAddressFromDb = _con.shipToAddresses.Find(id);
             if (ToAddressFromDb == null) return BadRequest(new { message = "Something Went Wrong!!" });
             else
             {

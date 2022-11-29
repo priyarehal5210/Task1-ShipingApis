@@ -37,7 +37,7 @@ namespace _1_ShipmentApis.Controllers
         [HttpDelete]
         public IActionResult deletepackage(int id)
         {
-            var packagefromdb = _con.shipmentPackages.FirstOrDefault(s => s.ID == id);
+            var packagefromdb = _con.shipmentPackages.Find(id);
             if (packagefromdb == null) return NotFound();
             else
             {
